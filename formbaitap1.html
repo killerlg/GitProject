@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form1 div>span {
+            display: inline-block;
+            width: 20%;
+        }
+
+        .form1 .hobbycheck {
+            display: inline-block;
+            width: 30%;
+        }
+
+        .form1 .hobbyright {
+            padding-left: 20%;
+        }
+
+        .buttoncont {
+            padding-top: 10px;
+            text-align: center;
+        }
+
+        .form2 div label {
+            display: inline-block;
+            width: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" method="post" class="form1">
+        <fieldset>
+            <legend>Sở thích của bạn</legend>
+            <div>
+                <span>Họ và tên</span>
+                <input type="text" name="yourname" value="">
+            </div>
+            <div>
+                <span>Email</span>
+                <input type="text" name="email" value="">
+            </div>
+            <div>
+                <div class="hobbyleft">Sở thích</div>
+                <div class="hobbyright">
+                    <div class="hobbycheck">
+                        <input type="checkbox" value="sport"> <label for="">Thể thao</label>
+                    </div>
+                    <div class="hobbycheck">
+                        <input type="checkbox" value="music"> <label for="">Âm nhạc</label>
+                    </div>
+                    <div class="hobbycheck">
+                        <input type="checkbox" value="book"> <label for="">Đọc sách</label>
+                    </div>
+                    <div class="hobbycheck">
+                        <input type="checkbox" value="web"> <label for="">Lướt web</label>
+                    </div>
+                    <div class="hobbycheck">
+                        <input type="checkbox" value="game"> <label for="">Chơi game</label>
+                    </div>
+                    <div class="hobbycheck">
+                        <input type="checkbox" value="film"> <label for="">Điện ảnh</label>
+                    </div>
+                    <div class="hobbycheck">
+                        <input type="checkbox" value="travel"> <label for="">Du lịch</label>
+                    </div>
+                </div>
+            </div>
+            <div class="buttoncont">
+                <input type="submit" value="Gửi thông tin">
+                <input type="reset" value="Nhập lại">
+            </div>
+        </fieldset>
+    </form>
+
+
+    <form action="" class="form2">
+        <fieldset>
+            <legend>Student Register</legend>
+            <div class="inputcontainer">
+                <label for="yourname">Họ và tên</label><input type="text" name="yourname">
+            </div>
+            <div class="inputcontainer">
+                <label for="dateofbirth">Ngày sinh</label><input type="text" name="dateofbirth">
+            </div>
+            <div class="inputcontainer">
+                <label for="sex">Giới tính</label>
+                <input type="radio" name="sex"> Nam
+                <input type="radio" name="sex"> Nữ
+            </div>
+            <div class="inputcontainer">
+                <label for="class">Lớp</label>
+                <select name="class">
+                    <option value="df" disabled selected hidden>Chọn lớp</option>
+                    <option value="1">1A</option>
+                    <option value="2">2A</option>
+                    <option value="3">3A</option>
+                </select>
+            </div>
+            <div class="inputcontainer">
+                <label for="email">Email</label><input type="text" name="email">
+            </div>
+            <div class="inputcontainer">
+                <label for="sdt">Số điện thoại</label><input type="text" name="sdt">
+            </div>
+            <div class="buttoncont">
+                <input type="submit" value="Gửi thông tin">
+                <input type="reset" value="Nhập lại">
+            </div>
+        </fieldset>
+    </form>
+</body>
+
+</html>
