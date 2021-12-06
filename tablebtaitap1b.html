@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th {
+            background-color: yellow;
+        }
+
+        tr:nth-child(2) th {
+            background-color: orange;
+        }
+
+        tr:first-child th:first-child {
+            background-color: white;
+        }
+
+        .wrapper {
+            max-width: 70%;
+        }
+
+        .wrapper2 {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+        .title {
+            text-align: center;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="wrapper">
+        <div class="title">
+            <h2> Thời Khóa Biểu</h2>
+        </div>
+        <div class="wrapper2">
+
+            <div class="left">
+                <div>Lop: T0909I</div>
+                <div>Giao vien: KhoaNV</div>
+                <div>Phong hoc: Class3/Lab3</div>
+            </div>
+            <div class="right">
+                <div>Thoi gian hoc: 13h30 - 15h30</div>
+                <div>Ngay hoc: Thu 3, Thu 5, Thu 7</div>
+            </div>
+
+        </div>
+
+        <table border="1" cellpadding="10">
+            <tr>
+                <th colspan="3"></th>
+                <th>Thu 3</th>
+                <th>Thu 5</th>
+                <th>Thu 7</th>
+            </tr>
+            <tr>
+                <th>Tuan</td>
+                <th>Ngay bat dau</th>
+                <th>Ngay ket thuc</th>
+                <th colspan="3">Mon hoc</th>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>01/09/2009</td>
+                <td>05/09/2009</td>
+                <td>CF - T1,L1</td>
+                <td>CF - T2,L2</td>
+                <td>CF - T3,L3</td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>01/09/2009</td>
+                <td>05/09/2009</td>
+                <td>CF - T1,L1</td>
+                <td>CF - T2,L2</td>
+                <td>CF - T3,L3</td>
+            </tr>
+            <tr>
+                <td>01</td>
+                <td>01/09/2009</td>
+                <td>05/09/2009</td>
+                <td>CF - T1,L1</td>
+                <td>CF - T2,L2</td>
+                <td>CF - T3,L3</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
