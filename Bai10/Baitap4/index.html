@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        box-sizing: border-box;
+    }
+
+    .container {
+        position: relative;
+        margin: auto;
+        width: 400px;
+        height: 400px;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .success {
+        font-size: 300%;
+        font-weight: bold;
+        color: red;
+        text-align: center;
+        transition: all 1s;
+    }
+</style>
+
+<body>
+    <div class="container">
+        
+        <div class="row">
+            <img src="img/1.png" value="1">
+        </div>
+        <div class="row">
+            <img src="img/2.png" value="2">
+        </div>
+        <div class="row">
+            <img src="img/3.png" value="3">
+        </div>
+        <div class="row">
+            <img src="img/4.png" value="4">
+        </div>
+        <div id="success" class="success hide">Thanh Cong!</div>
+    </div>
+
+    <script>
+        var allimg = document.querySelectorAll(".row img");
+        var imglength = allimg.length;
+        for (let i = 0; i < imglength; i++) {
+            allimg[i].onclick = changeimg;
+        }
+        function changeimg() {
+
+            let val = parseInt(this.getAttribute("value"));
+            if (val == 4) {
+                val = 1;
+            } else {
+                val++;
+            }
+            this.setAttribute("value", val);
+            let link = "img/" + val + ".png";
+            this.setAttribute("src", link);
+            if (check()) {
+                thongbao();
+            }
+        }
+        function check() {
+            let check = true;
+            for (let i = 0; i < imglength; i++) {
+                if (allimg[i].getAttribute("value") != allimg[1].getAttribute("value")) {
+                    check = false;
+                }
+            }
+            return check;
+        }
+        function thongbao() {
+            let interval = setInterval(function () {
+                document.getElementById("success").classList.remove("hide");
+                setTimeout(function () {
+                    document.getElementById("success").classList.add("hide");
+                }, 250)
+            },500)
+            setTimeout(function () {
+                clearInterval(interval)
+            },3000)
+        }
+
+
+    </script>
+</body>
+
+</html>
