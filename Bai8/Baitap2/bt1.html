@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            width: 100%;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+        .col {
+            width: 25%;
+        }
+        .col input {
+            width: 50%;
+        }
+        .col:last-child {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: end;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div class = "col">
+            <div>Amount</div>
+            <input type="text" name = "amount" id="amount" value="1">
+        </div>
+        <div class = "col">
+            <div>From Currency</div>
+            <select name="fromcurrency" id="fromcurrency">
+                <option value="23000">Dollar</option>
+                <option value="1">VietNamDong</option>
+            </select>
+        </div>
+        <div class = "col">
+            <div>To Currency</div>
+            <select name="tocurrency" id="tocurrency">
+                <option value="1">VietNamDong</option>
+                <option value="23000">Dollar</option>
+            </select>
+        </div>
+        <div class = "col">
+            <button type="button" id="convertbutton">Convert</button>
+        </div>
+    </form>
+    <div id="result"></div>
+
+
+    <script>
+        let convertbutton = document.getElementById("convertbutton");
+        convertbutton.onclick = convert;
+        function convert() {
+            let amount = document.getElementById("amount").value;
+            let from = document.getElementById("fromcurrency").value;
+            let to = document.getElementById("tocurrency").value;
+            let result = document.getElementById("result");
+            result.innerHTML = "Result: " + (amount * from / to) + " " + ((to == 23000) ? "USD":"VND")           ;
+        }
+    </script>
+</body>
+</html>
