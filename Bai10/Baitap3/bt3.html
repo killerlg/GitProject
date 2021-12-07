@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            height: 300px;
+            width: 300px;
+        }
+        .buttonrow button {
+            height: 50px;
+            width: 50px;
+            border: 1px solid grey;
+            color: blue;
+            font-weight: bold;
+            background-color: white;
+        }
+        .buttonwrapper {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-around;
+            
+        }
+        .buttonrow {
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .screendisplay {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .screendisplay input {
+            width: 90%;
+            height: 40px;
+            text-align: right;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="screendisplay">
+            <input type="text" id="screendisplay">
+        </div>
+        <div class="buttonwrapper">
+            <div class="buttonrow">
+                <button value="1">1</button>
+                <button value="2">2</button>
+                <button value="3">3</button>
+                <button value="+">+</button>
+            </div>
+            <div class="buttonrow">
+                <button value="4">4</button>
+                <button value="5">5</button>
+                <button value="6">6</button>
+                <button value="-">-</button>
+            </div>
+            <div class="buttonrow">
+                <button value="7">7</button>
+                <button value="8">8</button>
+                <button value="9">9</button>
+                <button value="*">x</button>
+            </div>
+            <div class="buttonrow">
+                <button id="delete">C</button>
+                <button value="0">0</button>
+                <button id="calculate">=</button>
+                <button value="/">/</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var screendisplay = document.getElementById("screendisplay");
+        var screenval = screendisplay.value;
+        var buttonarray = document.querySelectorAll(".buttonrow button");
+        for (let i=0; i<buttonarray.length;i++) {
+            buttonarray[i].onclick = inputinfo;
+        }
+
+        function inputinfo() {
+            screenval += this.value;
+            screendisplay.setAttribute("value",screenval);
+        }
+
+        var deletebutton = document.getElementById("delete");
+        deletebutton.onclick = deletescreen;
+        function deletescreen() {
+            screenval = screenval.substring(0,screenval.length-1);
+            screendisplay.setAttribute("value",screenval);
+        }
+
+        var calculatebutton = document.getElementById("calculate");
+        calculatebutton.onclick = calculatescreen;
+        function calculatescreen() {
+            screendisplay.setAttribute("value",eval(screenval));
+            screenval ="";
+        }
+
+    </script>
+</body>
+</html>
