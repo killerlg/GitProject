@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+            <input type="text" name="first" id="first">
+            <input type="text" name="second" id="second">
+        </div>
+        <div>
+                <button type="button" value="1">Addition(+)</button>
+                <button type="button" value="2">Subtraction(-)</button>
+                <button type="button" value="3">Multiplication(*)</button>
+                <button type="button" value="4">Division(/)</button>
+        </div>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        let buttonarray = document.getElementsByTagName("button");
+        console.log(buttonarray.length)
+        for (let i=0; i<buttonarray.length;i++) {
+            buttonarray[i].onclick = calfunction;
+        }
+        function calfunction() {
+            let calculation = "";
+            let cal = this.value;
+            let first = parseFloat(document.getElementById("first").value);
+            let second = parseFloat(document.getElementById("second").value);
+            let result;
+            switch (cal) {
+                case "1": {
+                    result = first + second;
+                    break;
+                }
+                case "2": {
+                    result = first - second;
+                    break;
+                }
+                case "3": {
+                    result = first * second;
+                    break;
+                }
+                default: {
+                    result = first / second;
+                    break;
+                }
+            }
+            document.getElementById("result").innerHTML = "Result : " + result;
+        }
+    </script>
+</body>
+</html>
