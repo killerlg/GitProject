@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function inputString() {
+            let str= prompt("Input a string");
+            let cha = prompt("Input a character");
+            if (str.indexOf(cha) != -1) {
+                 let count = 0;
+                 for (let i=0;i<str.length;i++) {
+                     if (str[i] == cha) {
+                         count++;
+                     }
+                 }
+                 return count;
+                 
+            } else {
+                return -1;
+            }
+        }
+
+        alert(inputString())
+    </script>
+</body>
+</html>

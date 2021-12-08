@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function nhapMang() {
+            let n = prompt("Nhap chieu dai mang");
+            let a =[]
+            for (let i=0;i<n;i++) {
+                a[i] = prompt("a[" + i + "]");
+            }
+
+            for (let i = n-1; i>=0;i--) {
+                document.write(a[i]);
+                document.write(" ");
+            }
+        }
+        nhapMang()
+
+    </script>
+</body>
+</html>
