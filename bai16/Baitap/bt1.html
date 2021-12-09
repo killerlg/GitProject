@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <canvas id="rectangle" style="border:1px solid #d3d3d3;">
+        Your browser does not support the HTML5 canvas tag.</canvas>
+    <br>
+    <button type="button" onclick="changeHeightAndWidth()" id="changerectangle">Change height and width</button>
+
+    <script>
+        function Rectangle(a, b) {
+            this.width = a,
+                this.height = b,
+                this.getS = function () {
+                    return this.a * this.b
+                }
+            this.getP = function () {
+                return (this.a + this.b) * 2
+            }
+        }
+        let a = prompt("Nhap chieu rong: ");
+        let b = prompt("Nhap chieu dai: ");
+
+        var rectangle1 = new Rectangle(a, b);
+        drawrectangle(rectangle1);
+
+        function drawrectangle(rectangle) {
+            let canvas = document.getElementById("rectangle");
+            canvas.setAttribute("height", parseInt(rectangle.height) + 50 + "px")
+            canvas.setAttribute("width", parseInt(rectangle.width) + 50 + "px")
+            let ctx = canvas.getContext("2d");
+            ctx.beginPath();
+            ctx.rect(25, 25, rectangle.width, rectangle.height);
+            ctx.stroke();20
+
+        }
+        function changeHeightAndWidth() {
+            let a = prompt("Nhap chieu rong: ");
+            let b = prompt("Nhap chieu dai: ");
+            rectangle1.width = a;
+            rectangle1.height = b;
+            drawrectangle(rectangle1);
+        }
+
+        
+
+    </script>
+</body>
+
+</html>

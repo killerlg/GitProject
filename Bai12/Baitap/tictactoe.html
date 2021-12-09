@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            height: 20px;
+            width: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Caro Game Simple</h3>
+    <div id="carogame" ></div>
+    
+
+    <script>
+        var b = document.getElementById("carogame");
+        var banco = [];
+        var hang =[]
+        for (let i=0;i<10;i++) {
+            hang.push(".");
+        }
+        for (let i=0;i<10;i++) {
+            banco.push(hang);
+        }
+
+        function render() {
+            let soHang = banco.length;
+            let soCot = banco[0].length;
+            let html =``;
+            for (let i=0; i<soHang; i++) {
+                let htmlHang = `<div class="row">`;
+                    for (let j=0;j<soCot;j++) {
+                        htmlHang += `<button`+ ` id="`+ i +j  +`"` + ` >`;
+                        htmlHang += banco[i][j];
+                        htmlHang += `</button>`
+                    }
+                htmlHang += `</div>`;
+                html += htmlHang;
+            }
+
+            b.innerHTML = html;
+        }
+        render()
+        
+
+
+        var arraybutton = document.querySelectorAll("button");
+        for (let i=0; i<arraybutton.length;i++) {
+            arraybutton[i].onclick = danhCo;
+        }
+        var lanDanh = 0;
+        function danhCo() {
+            lanDanh++;
+            if (lanDanh % 2 == 1) {
+                this.innerHTML = "X";
+                let x = this.getAttribute("id")[0];
+                let y = this.getAttribute("id")[1];
+                console.log(x +" " + y)
+                checkWinX(x,y);
+            } else {
+                let x = this.getAttribute("id")[0];
+                let y = this.getAttribute("id")[1];
+                this.innerHTML = "0";
+                checkWinO(x,y);
+            }
+        }
+
+        function checkWinX(x,y) {
+            checkNgang(x,y,"X") 
+        }
+        function checkWinO(x,y) {
+
+        }
+        
+    </script>
+</body>
+</html>

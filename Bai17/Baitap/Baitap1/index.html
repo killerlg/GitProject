@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const Apple = {
+            weight : 10,
+            decrese : function () {
+               this.weight -= 1;
+            },
+            isEmpty : function() {
+                if (this.weight == 0) {
+                    return true;
+                }
+                return false;
+            },
+            getWeight: function() {
+                return this.weight
+            }
+        }
+        console.log(Apple.getWeight())
+
+        function Human(name,gender,weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+
+            this.isMale = function() {
+                if (this.gender ="male") {
+                    return true;
+                }
+                return false;
+            }
+
+            this.checkApple = function () {
+                return Apple.getWeight();
+            }
+
+            this.eat = function() {
+                Apple.decrese();
+            }
+
+            this.say = function(str) {
+                console.log(str);
+            }
+
+            this.getName = function() {
+                return this.name;
+            }
+            this.setName = function(name) {
+                this.name = name;
+            }
+            this.getGender = function() {
+                return this.gender;
+            }
+            this.setGender = function(gender) {
+                this.gender = gender;
+            }
+            this.getWeight = function() {
+                return this.weight;
+            }
+            this.setName = function(weight) {
+                this.weight = weight;
+            }
+
+        }
+
+
+    </script>
+</body>
+</html>
