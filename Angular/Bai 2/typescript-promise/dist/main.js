@@ -11,7 +11,7 @@ const buyACar = (car) => {
         }, 100);
     });
 };
-money = 1000001;
+money = 1;
 const promise = buyACar("Vinfast").then(value => {
     console.log(value);
 }, error => {
