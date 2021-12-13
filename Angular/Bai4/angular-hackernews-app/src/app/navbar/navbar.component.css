@@ -1,0 +1,120 @@
+*, body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+/* logo */
+.logo-brand {
+  text-align: center;
+}
+
+/* navbar */
+.inavbar {
+  border-top: 2px solid rgba(0, 0, 0, 1);
+  border-bottom: 2px solid rgba(0, 0, 0, 1);
+  text-align: center;
+}
+ul {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.inavbar .inavbar-nav li {
+  list-style: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 5px 0px 0px 0px;
+}
+.inavbar .inavbar-nav li a {
+  color: rgba(0, 0, 0, 1);
+  text-decoration: none;
+
+}
+/* Drop down menu */
+.idropdown-menu {
+  display: none;
+}
+.inavbar-item:hover {
+  background-color: #6bcbea;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+}
+.inavbar-item:hover .idropdown-menu {
+  color: rgba(0, 0, 0, 1);
+  display: block;
+}
+.inavbar-item:hover .idropdown-menu .idropdown-item{
+  background-color: #a2dbee;
+  font-weight: normal;
+}
+.idropdown-item:hover a {
+  color: rgba(255, 255, 255, 1) !important;
+}
+.idropdown-menu .idropdown-item a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 1);
+}
+
+.idropdown-menu .idropdown-item a:visited {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 1);
+}
+/* Login Sign up Button */
+.inavbar-button {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.inavbar-button button {
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  background-color: #6bcbea;
+  border-radius: 5px;
+  height: 35px;
+  width: 100px;
+  margin-bottom: 7px;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 1);
+    padding: 5px;
+  }
+  .logo-brand {
+    padding: 0 10px;
+  }
+  .inavbar {
+    border: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .inavbar .inavbar-nav .inavbar-item{
+    display: inline-block;
+    border: none;
+    position: relative;
+    margin: 0 20px;
+    padding: 10px 5px;
+    border-radius: 5px;
+  }
+
+  .idropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+  }
+  .idropdown-item {
+    width: 200%;
+    padding: 5px 5px;
+    border-radius: 2px;
+  }
+  .inavbar-button {
+    display: flex;
+    flex-flow: wrap;
+  }
+  .inavbar-button button {
+    margin-right: 10px;
+  }
+}
