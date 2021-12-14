@@ -1,0 +1,57 @@
+<form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <label>
+    Name:
+    <input type="text" formControlName="email"/>
+  </label>
+  <div class="alert" *ngIf="formGroup.controls.email.invalid">Email khong hop le</div>
+  <br/>
+  <label>
+    Password:
+    <input required minlength="6" type="password" formControlName="password"/>
+  </label>
+  <div class="alert" *ngIf="formGroup.controls.password.invalid">Password khong hop le</div>
+  <br/>
+  <label>
+    Confirm Password:
+    <input required minlength="6" type="password" formControlName="confirmPassword"/>
+  </label>
+  <div class="alert" *ngIf="formGroup.controls.confirmPassword.invalid">Password khong hop le</div>
+  <br/>
+  <label>
+    Country:
+    <select required class="custom-select"  formControlName="country">
+      <option value="" disabled>Choose your city</option>
+      <option *ngFor="let country of country" [ngValue]="country">{{country}}</option>
+    </select>
+  </label>
+  <div class="alert" *ngIf="formGroup.controls.country.invalid">Vui long chon quoc gia</div>
+  <br/>
+  <label>
+    Age:
+    <input required type="number" formControlName="age"/>
+  </label>
+  <div class="alert" *ngIf="formGroup.controls.age.invalid">Tuoi khong hop le</div>
+  <br/>
+  <label>
+    Gender:
+    <div>
+      <input required id="male" type="radio" value="male" name="gender" formControlName="gender">
+      <label for="male">Male</label>
+    </div>
+
+    <div>
+      <input required id="female" type="radio" value="female" name="gender" formControlName="gender">
+      <label for="female">Female</label>
+    </div>
+  </label>
+  <div class="alert" *ngIf="formGroup.controls.gender.invalid">Gioi tinh khong hop le</div>
+  <br/>
+  <label>
+    Phone:
+    <input required type="text" formControlName="phone"/>
+  </label>
+  <div class="alert" *ngIf="formGroup.controls.phone.invalid" >Dien thoai khong hop le</div>
+  <br/>
+
+  <input type="submit" value="Submit">
+</form>
