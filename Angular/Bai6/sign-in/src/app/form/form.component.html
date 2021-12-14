@@ -1,0 +1,15 @@
+<form [formGroup]="formgroup">
+  <label>
+    Email:
+    <input type="email" formControlName="email">
+  </label>
+  <div *ngIf="formgroup.controls.email.invalid">Email khong hop le</div>
+  <br/>
+  <label>
+    Password:
+    <input type="password" formControlName="password">
+  </label>
+  <div *ngIf="formgroup.controls.password.invalid">Password khong hop le</div>
+  <br/>
+  <input type="submit">
+</form>
