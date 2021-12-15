@@ -1,0 +1,15 @@
+<h2>Danh sach cac tu</h2>
+<table>
+  <tr>
+    <th></th>
+    <th>Word</th>
+    <th>Mean</th>
+  </tr>
+  <tr *ngFor="let word of words; index as i">
+    <td>{{i+1}}</td>
+    <td><a [routerLink]="['/display', word.word]">{{word.word}}</a> </td>
+    <td>***</td>
+  </tr>
+</table>
+
+<router-outlet></router-outlet>
