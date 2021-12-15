@@ -1,0 +1,13 @@
+.background {
+  height: 400px;
+  width: 50%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.background h1 {
+  font-size: 400%;
+}
