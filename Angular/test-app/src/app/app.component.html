@@ -1,0 +1,8 @@
+<app-child [name]="name" [person]="person"></app-child>
+
+<div class="parent">
+  <input type="text" [formControl]="nameInput">
+  <div>Name: {{name}}</div>
+  <div>Person: {{person | json}}</div>
+  <button (click)="onSave()">Save</button>
+</div>
