@@ -9,31 +9,34 @@ import {ProductService} from '../service/product.service';
   styleUrls: ['./product-update.component.css']
 })
 export class ProductUpdateComponent implements OnInit {
-  productForm: FormGroup;
+  productForm = new FormGroup({
+    id: new FormControl(),
+    name: new FormControl(),
+    price: new FormControl(),
+    description: new FormControl()
+  });
   id: number;
 
   constructor(private productService: ProductService,
               private activatedRoute: ActivatedRoute) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
       this.id = +paramMap.get('id');
-      const product = this.getProduct(this.id);
-      this.productForm = new FormGroup({
-        id: new FormControl(product.id),
-        name: new FormControl(product.name),
-        price: new FormControl(product.price),
-        description: new FormControl(product.description),
-      });
+      this.getProduct(this.id);
     });
   }
 
   getProduct(id: number) {
-    return this.productService.findById(id);
+    return this.productService.findById(id).subscribe((product) => {
+      this.productForm.patchValue(product);
+    });
   }
 
   updateProduct(id: number) {
     const product = this.productForm.value;
-    this.productService.updateProduct(id, product);
-    alert('Cập nhật thành công');
+    this.productService.updateProduct(id, product).subscribe(() => {
+      alert('Cập nhật thành công');
+    }, error => console.log(error));
+
   }
 
   ngOnInit() {

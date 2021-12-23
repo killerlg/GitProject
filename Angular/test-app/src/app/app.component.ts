@@ -35,11 +35,11 @@ export class AppComponent implements OnInit {
       }
     );
 
-    // this.nameInput.valueChanges.subscribe(
-    //   (value: string) => {
-    //     this.name = value;
-    //     this.person.name = value;
-    //   }
-    // );
+    this.nameInput.valueChanges.subscribe(
+      (value: string) => {
+        this.name = value;
+        this.person.name = value;
+      }
+    );
   }
 }

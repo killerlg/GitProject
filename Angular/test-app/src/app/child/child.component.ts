@@ -24,11 +24,11 @@ export class ChildComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    // this.nameInput.valueChanges.subscribe(
-    //   (value: string) => {
-    //     this.childService.activatedEmiter.emit(value);
-    //   }
-    // );
+    this.nameInput.valueChanges.subscribe(
+      (value: string) => {
+        this.childService.activatedEmiter.emit(value);
+      }
+    );
 
 
   }
