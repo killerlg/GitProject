@@ -1,11 +1,11 @@
 <div class="input-search-group">
-  <input type="text" >
+    <input type="text" [(ngModel)]="filterName">
   <button type="button" (click)="joinNewGroup()">Join New Group</button>
 </div>
 <div class="list-group">
-  <div class="dont-join-group" *ngIf="listGroupInput.length === 0">You haven't joined any group</div>
+  <div class="dont-join-group" *ngIf="listGroupInput.length === 0">Don't have group valid</div>
 
-  <div class="group" *ngFor="let group of listGroupInput; index as i" (click)="selectGroup(group.id)">
+  <div class="group" *ngFor="let group of listGroupInput | customPipe:filterName:'name'; index as i" (click)="selectGroup(group.id)">
     <div class="avatar-group">{{group.name.slice(group.name.length-1)}}</div>
     <div class="name-group">Group: {{group.name}}</div>
   </div>

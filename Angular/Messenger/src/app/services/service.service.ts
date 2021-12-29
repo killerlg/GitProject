@@ -190,4 +190,8 @@ export class ServiceService {
     this.getUserById(this.currentUserId).groupid.push(idgroup);
     this.getGroupById(idgroup).memberid.push(this.currentUserId);
   }
+
+  findName(iduser: number) {
+    return this.users.find(value => value.id = iduser);
+  }
 }

@@ -10,6 +10,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class CurrentGroupComponent implements OnInit {
   @Input() groupInput: Group;
+  showornot = false;
 
   constructor(private service: ServiceService, private router: Router, private route: ActivatedRoute) {
   }
@@ -21,5 +22,9 @@ export class CurrentGroupComponent implements OnInit {
     this.service.outGroup();
     this.service.outGroupEmit.next();
     this.service.updateMessageEmit.next();
+  }
+
+  changeStt() {
+    this.showornot = !this.showornot;
   }
 }

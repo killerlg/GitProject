@@ -10,6 +10,7 @@ import {Group} from '../../models/group';
 })
 export class AllGroupComponent implements OnInit {
   allGroup: Group[];
+  filterString = '';
 
   constructor(private service: ServiceService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.allGroup = this.service.getAllGroupNotJoinById(this.service.currentUserId);
@@ -18,7 +19,7 @@ export class AllGroupComponent implements OnInit {
   ngOnInit() {
     this.service.joinGroupEmit
       .subscribe(() => this.allGroup = this.service.getAllGroupNotJoinById(this.service.currentUserId)
-  );
+      );
   }
 
   joinGroup(id: number) {

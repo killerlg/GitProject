@@ -1,6 +1,16 @@
 <div class="current-group">
   <div class="avatar-group-big">{{groupInput.name.slice(groupInput.name.lastIndexOf(" "))}}</div>
   <div class="name-group-big">{{groupInput.name}}</div>
-  <div class="member-online">| {{groupInput.memberid.length}} member </div>
+  <div class="member-online" (mouseenter)="changeStt()" (mouseleave)="changeStt()"
+  >| {{groupInput.memberid.length}} member
+  </div>
   <div class="out-button"><button type="button" (click)="outGroup()"> Out Group</button></div>
 </div>
+<div class="show-member" *ngIf="showornot" >
+  <div style="text-align: center; font-size: 150%"   >Member of group</div>
+  <div *ngFor="let id of groupInput.memberid; index as i">
+    {{i+1}}.{{this.service.findName(id).name}}:{{this.service.findNickName(id,groupInput.id).nickname}}
+  </div>
+
+</div>
+

@@ -175,6 +175,18 @@ body {
   margin-left: 25px;
 }
 
+.show-member {
+  padding: 20px;
+  color: white;
+  font-weight: bold;
+  position: fixed;
+  left: 50%;
+  top: 70px;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+
+
 .out-button {
   position: absolute;
   right: 25px;
@@ -287,4 +299,9 @@ body {
   font-weight: bold;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
+}
+.list-group-1 {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
 }

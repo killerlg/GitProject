@@ -1,5 +1,7 @@
-<div class="list-group">
+<div class="list-group-1">
+  <label>Searh Group Name: </label><input class="filter-all-group" type="text" [(ngModel)]="filterString">
   <table [cellPadding]="5">
+<!--    <input class="filter-all-group" type="text" [(ngModel)]="filterString">-->
     <tr>
       <th>Group ID</th>
       <th>Group Name</th>
@@ -8,7 +10,7 @@
     </tr>
 
 
-    <tr *ngFor="let group of allGroup; index as i">
+    <tr *ngFor="let group of allGroup | customPipe:filterString:'name'; index as i">
       <td>{{group.id}}</td>
       <td>{{group.name}}</td>
       <td>{{group.memberid.length}}</td>

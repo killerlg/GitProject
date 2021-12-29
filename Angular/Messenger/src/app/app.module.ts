@@ -13,6 +13,7 @@ import { RightcolumnComponent } from './components/rightcolumn/rightcolumn.compo
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AllGroupComponent } from './components/all-group/all-group.component';
 import { AllJoinGroupComponent } from './components/all-group/all-join-group/all-join-group.component';
+import { CustomPipePipe } from './pipe/custom-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AllJoinGroupComponent } from './components/all-group/all-join-group/all
     DisplayComponent,
     RightcolumnComponent,
     AllGroupComponent,
-    AllJoinGroupComponent
+    AllJoinGroupComponent,
+    CustomPipePipe
   ],
   imports: [
     BrowserModule,
