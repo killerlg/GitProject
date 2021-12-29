@@ -10,15 +10,20 @@ import {ProductService} from '../service/product.service';
 })
 export class ProductDeleteComponent implements OnInit {
 
-  productForm: FormGroup;
-  id: number;
+  productForm = new FormGroup({
+      _id: new FormControl(),
+    name: new FormControl(),
+    price: new FormControl(),
+    description: new FormControl()
+  });
+  id: string;
 
   constructor(private productService: ProductService,
               private activatedRoute: ActivatedRoute,
               private router: Router) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
-      this.id = +paramMap.get('id');
-      const product = this.getProduct(this.id);
+      this.id = paramMap.get('id');
+      this.getProduct(this.id);
 
     });
   }
@@ -26,18 +31,14 @@ export class ProductDeleteComponent implements OnInit {
   ngOnInit() {
   }
 
-  getProduct(id: number) {
-    return this.productService.findById(id).subscribe((product) => {
-      this.productForm = new FormGroup({
-        id: new FormControl(product.id),
-        name: new FormControl(product.name),
-        price: new FormControl(product.price),
-        description: new FormControl(product.description)
-      });
+  getProduct(id: string) {
+    return this.productService.findById(id).subscribe(product => {
+      this.productForm.patchValue(product.data);
+      console.log(product.data);
     });
   }
 
-  deleteProduct(id: number) {
+  deleteProduct(id: string) {
     this.productService.deleteProduct(id).subscribe(() => {
       this.router.navigate(['/product/list']);
     }, error => console.log(error));

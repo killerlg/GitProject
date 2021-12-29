@@ -9,14 +9,16 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
   styleUrls: ['./category-delete.component.css']
 })
 export class CategoryDeleteComponent implements OnInit {
-  categoryForm: FormGroup;
-  id: number;
+  categoryForm = new FormGroup({
+    name: new FormControl()
+  });
+  id: string;
 
   constructor(private categoryService: CategoryService,
               private router: Router,
               private activatedRoute: ActivatedRoute) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
-      this.id = +paramMap.get('id');
+      this.id = paramMap.get('id');
       this.getCategory(this.id);
     });
   }
@@ -24,15 +26,15 @@ export class CategoryDeleteComponent implements OnInit {
   ngOnInit() {
   }
 
-  getCategory(id: number) {
+  getCategory(id: string) {
     return this.categoryService.findById(id).subscribe(category => {
-      this.categoryForm = new FormGroup({
-        name: new FormControl(category.name),
+      this.categoryForm.patchValue({
+        name: category.data.name
       });
     });
   }
 
-  deleteCategory(id: number) {
+  deleteCategory(id: string) {
     this.categoryService.deleteCategory(id).subscribe(() => {
       this.router.navigate(['/category/list']);
     }, e => {

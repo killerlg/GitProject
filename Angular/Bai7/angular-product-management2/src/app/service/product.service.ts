@@ -16,24 +16,24 @@ export class ProductService {
   constructor(private http: HttpClient) {
   }
 
-  getAll(): Observable<Product[]> {
-    return this.http.get<Category[]>(API_URL + '/products');
+  getAll(): Observable<any> {
+    return this.http.get<any>(API_URL + '/products');
   }
 
   saveProduct(product): Observable<Product> {
     return this.http.post<Product>(API_URL + '/products', product);
   }
 
-  findById(id: number): Observable<Product> {
-    return this.http.get<Product>(`${API_URL}/products/${id}`);
+  findById(id: string): Observable<any> {
+    return this.http.get<any>(`${API_URL}/products/${id}`);
   }
 
-  updateProduct(id: number, product: Product): Observable<Product> {
-    return this.http.put<Product>(`${API_URL}/products/${id}`, product);
+  updateProduct(id: string, product: Product): Observable<Product> {
+    return this.http.patch<Product>(`${API_URL}/products/${id}`, product);
   }
 
-  deleteProduct(id): Observable<Product> {
-    return this.http.delete<Product>(`${API_URL}/products/${id}`);
+  deleteProduct(id) {
+    return this.http.delete(`${API_URL}/products/${id}`);
 
   }
 }

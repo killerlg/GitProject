@@ -1,0 +1,11 @@
+.all-join-container {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+form {
+  display: block;
+}
+.label {
+  display: block;
+}

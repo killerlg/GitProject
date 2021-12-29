@@ -1,0 +1,19 @@
+<div class="list-group">
+  <table [cellPadding]="5">
+    <tr>
+      <th>Group ID</th>
+      <th>Group Name</th>
+      <th>Member</th>
+      <th>Join</th>
+    </tr>
+
+
+    <tr *ngFor="let group of allGroup; index as i">
+      <td>{{group.id}}</td>
+      <td>{{group.name}}</td>
+      <td>{{group.memberid.length}}</td>
+      <td><button (click)="joinGroup(group.id)">Join</button></td>
+    </tr>
+  </table>
+</div>
+<router-outlet></router-outlet>

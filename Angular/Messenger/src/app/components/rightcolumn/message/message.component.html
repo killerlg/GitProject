@@ -1,0 +1,23 @@
+<div class="messages" #content>
+  <div class="message"
+       *ngFor="let message of messagesInput; index as i"
+       [class.another-message]="message.senderid !== user && message.type === true"
+       [class.me-message]="message.senderid === user && message.type === true"
+       [class.inout-message]="message.type === false"
+       #messages>
+    <div class="name-send" *ngIf="message.type===true && message.senderid !== user">
+      {{service.findNickName(message.senderid,service.currentGroupId).nickname || service.getUserById(message.senderid).name }}
+    </div>
+    <div class="name-send" *ngIf="message.type===true && message.senderid === user">
+      You
+    </div>
+    <div class="message-send "
+         [class.another]="message.senderid !== user && message.type === true"
+         [class.me]="message.senderid === user && message.type === true"
+    >{{message.content}} </div>
+    <div class="time-send">{{message.time | date:'mediumTime'}}</div>
+  </div>
+
+
+</div>
+

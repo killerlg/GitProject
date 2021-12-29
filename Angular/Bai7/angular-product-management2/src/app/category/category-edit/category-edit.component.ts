@@ -13,12 +13,12 @@ export class CategoryEditComponent implements OnInit {
   categoryForm = new FormGroup({
     name: new FormControl(),
   });
-  id: number;
+  id: string;
 
   constructor(private categoryService: CategoryService,
               private activatedRoute: ActivatedRoute) {
     this.activatedRoute.paramMap.subscribe((paramMap: ParamMap) => {
-      this.id = +paramMap.get('id');
+      this.id = paramMap.get('id');
       this.getCategory(this.id);
     });
   }
@@ -26,15 +26,15 @@ export class CategoryEditComponent implements OnInit {
   ngOnInit() {
   }
 
-  getCategory(id: number) {
+  getCategory(id: string) {
     return this.categoryService.findById(id).subscribe(category => {
-      this.categoryForm = new FormGroup({
-        name: new FormControl(category.name),
+      this.categoryForm.patchValue({
+        name: category.data.name
       });
     });
   }
 
-  updateCategory(id: number) {
+  updateCategory(id: string) {
     const category = this.categoryForm.value;
     this.categoryService.updateCategory(id, category).subscribe(() => {
       alert('Cập nhật thành công');

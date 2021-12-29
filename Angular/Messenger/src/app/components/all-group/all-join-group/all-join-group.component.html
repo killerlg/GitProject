@@ -1,0 +1,15 @@
+<div class="all-join-container">
+<!--  <div class="title">Join Group</div>-->
+  <form (ngSubmit)="onSubmit()" [formGroup]="formGroup">
+    <div class="form-control">
+      <div class="label">Nick name: </div>
+      <input type="text" name="nickname" formControlName="nickname"/>
+    </div>
+    <div >
+      <div class="label">Group: </div>
+      <input type="text" name="groupid" formControlName="groupid"  [readonly]="true"/>
+    </div>
+    <button type="submit">Join</button>
+  </form>
+
+</div>

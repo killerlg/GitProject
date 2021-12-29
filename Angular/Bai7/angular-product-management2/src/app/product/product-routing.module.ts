@@ -14,7 +14,7 @@ const routes: Routes = [
     path: 'create',
     component: ProductCreateComponent
   }, {
-    path: 'update/:id',
+    path: 'edit/:id',
     component: ProductUpdateComponent
   }, {
     path: 'delete/:id',
