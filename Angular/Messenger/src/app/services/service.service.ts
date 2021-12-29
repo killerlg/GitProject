@@ -189,9 +189,10 @@ export class ServiceService {
     this.getGroupById(idgroup).messageid.push(this.messages.length);
     this.getUserById(this.currentUserId).groupid.push(idgroup);
     this.getGroupById(idgroup).memberid.push(this.currentUserId);
+    console.log(this.getGroupById(idgroup).memberid);
   }
 
   findName(iduser: number) {
-    return this.users.find(value => value.id = iduser);
+    return this.users.find(value => value.id === iduser);
   }
 }
