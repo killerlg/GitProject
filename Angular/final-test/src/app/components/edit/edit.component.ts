@@ -25,7 +25,7 @@ export class EditComponent implements OnInit {
       reason: new FormControl('', [Validators.required]),
       treatmentMethods: new FormControl('', [Validators.required]),
       doctorName: new FormControl('', [Validators.required])
-    }, [forbiddenDateValidator]);
+    });
     this.activatedroute.paramMap.subscribe(value => {
       const id = value.get('id');
       this.formGroup.patchValue(this.service.findRecordByIdRecord(id));
