@@ -19,9 +19,9 @@ export class EditComponent implements OnInit {
     this.formGroup = new FormGroup({
       idRecord: new FormControl('', [Validators.required]),
       patientId: new FormControl('', [Validators.required]),
-      patientName: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]*')]),
-      startIn: new FormControl('', [Validators.required]),
-      startOut: new FormControl('', [Validators.required]),
+      patientName: new FormControl('', [Validators.required]),
+      startIn: new FormControl(),
+      startOut: new FormControl(),
       reason: new FormControl('', [Validators.required]),
       treatmentMethods: new FormControl('', [Validators.required]),
       doctorName: new FormControl('', [Validators.required])
@@ -46,9 +46,3 @@ export class EditComponent implements OnInit {
 
 }
 
-function forbiddenDateValidator(formGroup: FormGroup): { [s: string]: boolean } {
-  if (formGroup.get('startIn').value !== formGroup.get('startOut').value) {
-    return {invalidDate: true};
-  }
-  return null;
-}
