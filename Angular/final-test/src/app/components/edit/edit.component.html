@@ -34,7 +34,7 @@
     </div>
 
     <div style="text-align: center">
-      <button type="submit" class="btn btn-primary mb-3" (click)="save()">Save</button>
+      <button type="submit" class="btn btn-primary mb-3" (click)="save()" [disabled]="formGroup.invalid">Save</button>
       <button type="submit" class="btn btn-danger mb-3">
         <a [routerLink]="['/listallrecords']" style="text-decoration: none; color: white">Cancel</a>
       </button>

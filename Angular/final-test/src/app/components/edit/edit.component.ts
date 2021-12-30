@@ -10,21 +10,22 @@ import {valueReferenceToExpression} from '@angular/compiler-cli/src/ngtsc/annota
   styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-  formGroup = new FormGroup({
-    idRecord: new FormControl('', [Validators.required]),
-    patientId: new FormControl('', [Validators.required]),
-    patientName: new FormControl('', [Validators.required]),
-    startIn: new FormControl('', [Validators.required]),
-    startOut: new FormControl('', [Validators.required]),
-    reason: new FormControl('', [Validators.required]),
-    treatmentMethods: new FormControl('', [Validators.required]),
-    doctorName: new FormControl('', [Validators.required])
-  });
+  formGroup: FormGroup;
 
 
   constructor(private activatedroute: ActivatedRoute,
               private service: MedicalServiceService,
               private router: Router) {
+    this.formGroup = new FormGroup({
+      idRecord: new FormControl('', [Validators.required]),
+      patientId: new FormControl('', [Validators.required]),
+      patientName: new FormControl('', [Validators.required, Validators.pattern('[a-zA-Z ]*')]),
+      startIn: new FormControl('', [Validators.required]),
+      startOut: new FormControl('', [Validators.required]),
+      reason: new FormControl('', [Validators.required]),
+      treatmentMethods: new FormControl('', [Validators.required]),
+      doctorName: new FormControl('', [Validators.required])
+    });
     this.activatedroute.paramMap.subscribe(value => {
       const id = value.get('id');
       this.formGroup.patchValue(this.service.findRecordByIdRecord(id));
