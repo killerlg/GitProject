@@ -27,11 +27,11 @@
       <td>{{record.treatmentMethods}}</td>
       <td>{{record.doctorName}}</td>
       <td>
-        <button type="button" class="btn btn-info"><a [routerLink]="['/edit', record.idRecord]">Edit</a></button>
+        <button type="button" class="btn btn-info">
+          <a style="text-decoration: none; color: white"[routerLink]="['/edit', record.idRecord]">Edit</a></button>
         <button type="button" class="btn btn-danger" ng-confirm-click="Are you sure to delete this product ?"
                 (click)="delete(record.idRecord)">Del
         </button>
-
       </td>
     </tr>
 
