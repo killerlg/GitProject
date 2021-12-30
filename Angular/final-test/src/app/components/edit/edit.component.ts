@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MedicalServiceService} from '../../services/medical-service.service';
 import {valueReferenceToExpression} from '@angular/compiler-cli/src/ngtsc/annotations/src/util';
@@ -11,14 +11,14 @@ import {valueReferenceToExpression} from '@angular/compiler-cli/src/ngtsc/annota
 })
 export class EditComponent implements OnInit {
   formGroup = new FormGroup({
-    idRecord: new FormControl(),
-    patientId: new FormControl(),
-    patientName: new FormControl(),
-    startIn: new FormControl(),
-    startOut: new FormControl(),
-    reason: new FormControl(),
-    treatmentMethods: new FormControl(),
-    doctorName: new FormControl()
+    idRecord: new FormControl('', [Validators.required]),
+    patientId: new FormControl('', [Validators.required]),
+    patientName: new FormControl('', [Validators.required]),
+    startIn: new FormControl('', [Validators.required]),
+    startOut: new FormControl('', [Validators.required]),
+    reason: new FormControl('', [Validators.required]),
+    treatmentMethods: new FormControl('', [Validators.required]),
+    doctorName: new FormControl('', [Validators.required])
   });
 
 
