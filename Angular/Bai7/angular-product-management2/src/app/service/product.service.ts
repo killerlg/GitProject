@@ -8,16 +8,19 @@ import {Category} from '../model/category';
 const API_URL = `${environment.apiUrl}`;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn:
+    'root'
 })
 export class ProductService {
-
-
+  custom: Product = {
+    name: 'hello'
+  };
   constructor(private http: HttpClient) {
   }
 
   getAll(): Observable<any> {
     return this.http.get<any>(API_URL + '/products');
+
   }
 
   saveProduct(product): Observable<Product> {

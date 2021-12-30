@@ -1,0 +1,46 @@
+<div class="container">
+  <form [formGroup]="formGroup">
+    <div class="mb-3">
+      <label for="idRecord" class="form-label">Ma benh an</label>
+      <input type="text" class="form-control" id="idRecord" formControlName="idRecord" [readonly]="true">
+    </div>
+    <div class="mb-3">
+      <label for="patientId" class="form-label">Ma benh nhan</label>
+      <input type="text" class="form-control" id="patientId" formControlName="patientId" [readonly]="true">
+    </div>
+    <div class="mb-3">
+      <label for="patientName" class="form-label">Ten benh nhan</label>
+      <input type="text" class="form-control" id="patientName" formControlName="patientName">
+    </div>
+    <div class="mb-3">
+      <label for="startIn" class="form-label">Ngay nhap vien</label>
+      <input type="date" class="form-control" id="startIn"  formControlName="startIn">
+    </div>
+    <div class="mb-3">
+      <label for="startOut" class="form-label">Ngay ra vien</label>
+      <input type="date" class="form-control" id="startOut"  formControlName="startOut" >
+    </div>
+    <div class="mb-3">
+      <label for="reason" class="form-label">Ly do nhap vien</label>
+      <textarea class="form-control" id="reason" rows="3" formControlName="reason"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="treatmentMethods" class="form-label">Phuong phap dieu tri</label>
+      <textarea class="form-control" id="treatmentMethods" rows="3" formControlName="treatmentMethods"></textarea>
+    </div>
+    <div class="mb-3">
+      <label for="doctorName" class="form-label">bac si dieu tri</label>
+      <input type="text" class="form-control" id="doctorName" formControlName="doctorName">
+    </div>
+
+    <div style="text-align: center">
+      <button type="submit" class="btn btn-primary mb-3" (click)="save()">Save</button>
+      <button type="submit" class="btn btn-danger mb-3">
+        <a [routerLink]="['/listallrecords']" style="text-decoration: none; color: white">Cancel</a>
+      </button>
+    </div>
+  </form>
+
+
+
+</div>
