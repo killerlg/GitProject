@@ -25,7 +25,7 @@ export class EditComponent implements OnInit {
       reason: new FormControl('', [Validators.required]),
       treatmentMethods: new FormControl('', [Validators.required]),
       doctorName: new FormControl('', [Validators.required])
-    });
+    }, [forbiddenDateValidator]);
     this.activatedroute.paramMap.subscribe(value => {
       const id = value.get('id');
       this.formGroup.patchValue(this.service.findRecordByIdRecord(id));
@@ -42,4 +42,13 @@ export class EditComponent implements OnInit {
     this.service.editRecordById(this.formGroup.get('idRecord').value, value);
     this.router.navigate(['/listallrecords']);
   }
+
+
+}
+
+function forbiddenDateValidator(formGroup: FormGroup): { [s: string]: boolean } {
+  if (formGroup.get('startIn').value !== formGroup.get('startOut').value) {
+    return {invalidDate: true};
+  }
+  return null;
 }

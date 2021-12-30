@@ -33,7 +33,7 @@ export class FormComponent implements OnInit {
 }
 
 function forbiddenNameValidator(formGroup: FormGroup): { [s: string]: boolean } {
-  if (formGroup.get('password').value !== formGroup.get('confirmPassword').value) {
+  if (formGroup.get('password').value > formGroup.get('confirmPassword').value) {
     return {dontMatchPassword: true};
   }
   return null;
