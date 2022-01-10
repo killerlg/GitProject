@@ -19,7 +19,7 @@ export class EditComponent implements OnInit {
     this.formGroup = new FormGroup({
       idRecord: new FormControl('', [Validators.required]),
       patientId: new FormControl('', [Validators.required]),
-      patientName: new FormControl('', [Validators.required]),
+      patientName: new FormControl('', [Validators.required, Validators.pattern(/^[A-Za-z\s]+$/)]),
       startIn: new FormControl(),
       startOut: new FormControl(),
       reason: new FormControl('', [Validators.required]),
