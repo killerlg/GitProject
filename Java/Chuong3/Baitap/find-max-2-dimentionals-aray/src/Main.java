@@ -27,6 +27,6 @@ public class Main {
             }
         }
 
-        System.out.println("Max:  x: "+x +", y: "+ y);
+        System.out.println("Max:  x: "+x +", y"+ y);
     }
 }
