@@ -9,7 +9,7 @@ public class InsertSort {
                 a[j] = a[j-1];
                 a[j-1]=tmp;
                 j--;
-                
+
                 for (int k=0; k<n;k++) {
                     System.out.print(" "+ a[k]);
                 }
