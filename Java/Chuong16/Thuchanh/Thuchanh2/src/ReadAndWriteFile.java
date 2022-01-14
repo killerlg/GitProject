@@ -9,7 +9,6 @@ public class ReadAndWriteFile {
         int maxValue = findMax(numbers);
         readAndWriteFile.writeFile("result.txt", maxValue);
     }
-    
     public List<Integer> readFile(String filePath){
         List<Integer> numbers = new ArrayList<>();
         try {
