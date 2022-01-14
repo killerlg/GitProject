@@ -1,4 +1,5 @@
 import java.io.*;
+import java.security.spec.RSAOtherPrimeInfo;
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
@@ -20,6 +21,7 @@ public class CopyFile {
 
             // Kiểm tra nếu file không tồn tại thì ném ra ngoại lệ.
             if (!file.exists()) {
+                System.out.println("File source khong ton tai");
                 throw new FileNotFoundException();
             }
 
