@@ -44,10 +44,12 @@ public class Main {
     public static List<Product> readDataFromFile() {
         List<Product> products = new ArrayList<>();
         try {
-            FileInputStream fis = new FileInputStream("File/data.txt");
-            ObjectInputStream ois = new ObjectInputStream(fis);
-            products = (List<Product>) ois.readObject();
-            fis.close();
+            ObjectInputStream ois;
+            try (FileInputStream fis = new FileInputStream("File/data.txt")) {
+                ois = new ObjectInputStream(fis);
+                products = (List<Product>) ois.readObject();
+                fis.close();
+            }
             ois.close();
         } catch (Exception ex) {
             ex.printStackTrace();
