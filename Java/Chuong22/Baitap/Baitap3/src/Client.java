@@ -1,6 +1,4 @@
-
 import java.util.Set;
-
 public class Client {
     private CollectionOperations collectionOperations;
 
