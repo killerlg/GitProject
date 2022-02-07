@@ -26,4 +26,8 @@ CREATE TABLE OrderDetail
     pID INT,
     odQTY INT NOT NULL,
     PRIMARY KEY(oID,pID)
+<<<<<<< HEAD
 );
+=======
+);
+>>>>>>> 12b5ece94a32ae5c124a912e3aa68620faed0210
