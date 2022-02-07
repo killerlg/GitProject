@@ -37,8 +37,10 @@ on p.pID = od.pID
 select * from Customer as c
 where c.cID NOT IN (Select c.cID from Orderr)
 
-select o.oID,o.oDate,p.pPrice*od.odQTY as Price from Orderr as o
+USE quanlybanhang;
+select o.oID,o.oDate,SUM(p.pPrice*od.odQTY) as Price from Orderr as o
 Join OrderDetail as od
 on od.oID = o.oID
 Join Product as p
 on p.pID = od.pID
+group by o.oID
