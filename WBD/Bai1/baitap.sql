@@ -4,14 +4,15 @@ CREATE TABLE Customer
 (
     cID   INT AUTO_INCREMENT PRIMARY KEY,
     cName VARCHAR(60) NOT NULL,
-    cAge INT NOT NULL,
+    cAge INT NOT NULL
 );
-CREATE TABLE Order
+CREATE TABLE Orderr
 (
-    oID   INT AUTO_INCREMENT PRIMARY KEY,
-    cID INT FORGEIN KEY REFERENCES Customer(cID),
+    oID INT AUTO_INCREMENT PRIMARY KEY,
+    cID INT ,
     oDate DATE NOT NULL,
-    oTotalPrice DOUBLE NOT NULL
+    oTotalPrice DOUBLE NOT NULL,
+    FOREIGN KEY (cID) REFERENCES Customer(cID)
 );
 CREATE TABLE Product
 (
@@ -19,10 +20,10 @@ CREATE TABLE Product
     pName varchar(60),
     pPrice DOUBLE NOT NULL
 );
-CREATE TABLE OrderDetai;l
+CREATE TABLE OrderDetail
 (
     oID INT,
     pID INT,
     odQTY INT NOT NULL,
-    PRIMARY KEY(oID,pID),
+    PRIMARY KEY(oID,pID)
 );
