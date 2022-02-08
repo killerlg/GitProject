@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: black;
+    color: white;
+    padding: 15px;
+}
+
+.logo {
+    display: inline-block;
+}
+
+nav>ul {
+    display: inline-block;
+}
+
+nav>ul>li {
+    display: inline-block;
+    height: 100%;
+    padding: 5px;
+}
+
+.main {
+    width: 100%;
+    height: 500px;
+}
+
+.main1 {
+    width: 25%;
+    height: 100%;
+    background-color: beige;
+    float: left;
+}
+
+.main2 {
+    width: 50%;
+    height: 100%;
+    float: left;
+    background-color: aliceblue;
+}
+
+.main3 {
+    width: 25%;
+    height: 100%;
+    background-color: beige;
+    float: left;
+}
+
+.footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: black;
+    color: white;
+}
