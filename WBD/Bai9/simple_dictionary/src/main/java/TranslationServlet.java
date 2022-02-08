@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 
-@WebServlet(name = "TranslationServlet ", value = "/TranslationServlet ")
+@WebServlet(name = "TranslationServlet ", value = "/translate ")
 public class TranslationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
