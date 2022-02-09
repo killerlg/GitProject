@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 public class MainFunction {
     public static ArrayList<String> listResult = new ArrayList<>();
+    public static int maxIndex = 0;
 
     public static void main(String[] args) throws NotFoundProductException {
 //        Read file to data
@@ -50,7 +51,8 @@ public class MainFunction {
 
     public static void addMobile() {
         AddMobile addMobile = new AddMobile();
-        addMobile.addMobile(listResult.size()+1);
+        maxIndex++;
+        addMobile.addMobile(maxIndex);
         readFile();
     }
 
@@ -63,6 +65,9 @@ public class MainFunction {
     public static void readFile() {
         DisplayAllMobile displayAllMobile = new DisplayAllMobile();
         listResult = displayAllMobile.readFile();
+        if (maxIndex == 0) {
+            maxIndex = listResult.size();
+        }
     }
 
     public static void displayFile() {
