@@ -57,24 +57,39 @@ public class MainFunction {
     }
 
     public static void deleteMobile() throws NotFoundProductException {
-        DeleteMobile deleteMobile = new DeleteMobile();
-        deleteMobile.delete();
-        readFile();
+        try {
+            DeleteMobile deleteMobile = new DeleteMobile();
+            deleteMobile.delete();
+            readFile();
+        } catch (NotFoundProductException e) {
+            System.out.println("Du lieu trong file trong");
+        }
+
     }
 
     public static void readFile() {
         DisplayAllMobile displayAllMobile = new DisplayAllMobile();
         listResult = displayAllMobile.readFile();
-        String result = listResult.get(listResult.size()-1);
-        maxIndex = Integer.parseInt(result.substring(0, result.indexOf(",")));
+        if (!listResult.isEmpty()) {
+            String result = listResult.get(listResult.size() - 1);
+            maxIndex = Integer.parseInt(result.substring(0, result.indexOf(",")));
+        } else {
+            maxIndex = 0;
+        }
+
     }
 
     public static void displayFile() {
         DisplayAllMobile displayAllMobile = new DisplayAllMobile();
         displayAllMobile.displayAllMobile();
     }
-    public static void search() throws NotFoundProductException {
-    SearchMobile searchMobile = new SearchMobile();
-    searchMobile.search();
+
+    public static void search() {
+        try {
+            SearchMobile searchMobile = new SearchMobile();
+            searchMobile.search();
+        } catch (NotFoundProductException e) {
+            System.out.println("Du lieu khon hop le");
+        }
     }
 }

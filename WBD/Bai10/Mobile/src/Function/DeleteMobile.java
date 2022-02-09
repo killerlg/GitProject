@@ -10,6 +10,9 @@ public class DeleteMobile {
         Scanner scanner = new Scanner(System.in);
         boolean check = false;
         ArrayList<String> listResult = readFile();
+        if (listResult.isEmpty()) {
+            check = true;
+        }
         int indexToDelete = 0;
         do {
             System.out.println("Nhap vao id can xoa: ");
@@ -27,11 +30,12 @@ public class DeleteMobile {
 
 
 
-        if (check) {
+        if (check && (!listResult.isEmpty())) {
                 System.out.println("Xac nhan xoa: (Input Yes to Delete)");
                 String confirm = scanner.next();
                 if (confirm.equalsIgnoreCase("Yes")) {
                     listResult.remove(indexToDelete);
+                    System.out.println("Da xoa san pham theo yeu cau");
                 } else {
                     System.out.println("Huy xoa");
                 }
