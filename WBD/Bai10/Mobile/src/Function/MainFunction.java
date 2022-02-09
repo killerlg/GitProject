@@ -65,9 +65,8 @@ public class MainFunction {
     public static void readFile() {
         DisplayAllMobile displayAllMobile = new DisplayAllMobile();
         listResult = displayAllMobile.readFile();
-        if (maxIndex == 0) {
-            maxIndex = listResult.size();
-        }
+        String result = listResult.get(listResult.size()-1);
+        maxIndex = Integer.parseInt(result.substring(0, result.indexOf(",")));
     }
 
     public static void displayFile() {
