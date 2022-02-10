@@ -8,7 +8,7 @@ public interface IUserDAO {
 
     public User selectUser(int id);
 
-    public List<User> selectAllUsers();
+    public List<User> selectAllUsers() throws SQLException;
     public List<User> selectAllUsersAsc();
     public List<User> selectAllUsersDesc();
 
