@@ -9,6 +9,10 @@ public interface IUserDAO {
     public User selectUser(int id);
 
     public List<User> selectAllUsers();
+    public List<User> selectAllUsersAsc();
+    public List<User> selectAllUsersDesc();
+
+    public List<User> searchUserByCountry(String countrySearch);
 
     public boolean deleteUser(int id) throws SQLException;
 
