@@ -19,7 +19,8 @@
     <a href="users?action=create">Add New User</a>
   </h2>
   <h2>
-    <a href="users?action=search">Search User</a>
+    <a href="users?action=search">Search USer</a>
+
   </h2>
   <h2>
     <a href="users?action=listasc">User Sort Asc</a>
