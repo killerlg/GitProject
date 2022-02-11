@@ -20,6 +20,7 @@
 <center>
     <h1>User Management</h1>
     <h2>
+        <div style="text-align: center">${message}</div>
         <a href="home?action=create">Add New Note</a>
     </h2>
     <h2>Search Note</h2>
@@ -28,7 +29,7 @@
         <input type="submit" value="Search">
     </form>
 </center>
-<div style="text-align: center">${message}</div>
+
 <div class="container" align="center">
     <table border="1" cellpadding="5">
         <thead>

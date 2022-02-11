@@ -64,6 +64,7 @@ public class HomeServlet extends HttpServlet {
     private void showDeletePage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
         Note note = noteMethod.getNodeById(id);
+        request.setAttribute("note",note);
         request.getRequestDispatcher("note/delete.jsp").forward(request,response);
     }
 
@@ -143,6 +144,8 @@ public class HomeServlet extends HttpServlet {
         } else {
             request.setAttribute("message", "Delete Fail!");
         }
+        List<Note> noteList = noteMethod.getAllNote();
+        request.setAttribute("noteList", noteList);
         request.getRequestDispatcher("note/home.jsp").forward(request,response);
     }
 
