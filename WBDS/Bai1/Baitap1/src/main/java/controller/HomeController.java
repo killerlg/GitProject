@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 
 @Controller
 public class HomeController {
@@ -16,30 +19,20 @@ public class HomeController {
 
     @GetMapping("/calculate")
     public String calculate(HttpServletRequest request, Model model) {
-        String first = request.getParameter("first");
-        String second = request.getParameter("second");
-        String calculation = request.getParameter("calculation");
-        String result = "";
-        switch (calculation) {
-            case "+":
-                result = String.valueOf(Double.parseDouble(first) + Double.parseDouble(second)) ;
-                break;
-            case "-":
-                result = String.valueOf(Double.parseDouble(first) - Double.parseDouble(second));
-                break;
-            case "*":
-                result = String.valueOf(Double.parseDouble(first) * Double.parseDouble(second));
-                break;
-            case "/":
-                if (Double.parseDouble(second) != 0) {
-                    result = String.valueOf(Double.parseDouble(first) / Double.parseDouble(second));
-                } else {
-                    result = "Tham so thu 2 khong hop le";
-                }
-                break;
+        String text = request.getParameter("first");
+        String result= "";
+        Map<String, String> dictionary = new HashMap<>();
+        dictionary.put("hello","xin chao");
+        dictionary.put("dog","con cho");
+        dictionary.put("cat","con meo");
+        dictionary.put("birth","con chim");
+        if (dictionary.containsKey(text.toLowerCase())) {
+            result = dictionary.get(text.toLowerCase());
+        } else {
+            result =  "Khong tim thay tu trong tu dien";
         }
-        String display = first + " " + calculation + " " + second + " = ?";
-        model.addAttribute("display",display);
+
+        model.addAttribute("display",text);
         model.addAttribute("result",result);
         return "calculate";
     }

@@ -11,7 +11,7 @@
     <title>Calculate</title>
 </head>
 <body>
-    <div>Input:  ${display}</div>
-    <div>Result: ${result}</div>
+    <div>Text:  ${display}</div>
+    <div>Mean: ${result}</div>
 </body>
 </html>

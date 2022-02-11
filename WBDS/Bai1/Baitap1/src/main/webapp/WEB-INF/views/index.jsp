@@ -12,17 +12,8 @@
   </head>
   <body>
   <form method="get" action="calculate">
-    <label>First Number</label>
-    <input type="number" step="any" name="first">
-    <label>Calculate</label>
-    <select name="calculation">
-      <option value="+">+</option>
-      <option value="-">-</option>
-      <option value="*">*</option>
-      <option value="/">/</option>
-    </select>
-    <label>Second Number</label>
-    <input type="number" step="any" name="second">
+    <label>Input Text</label>
+    <input type="text" step="any" name="first">
     <button type="submit">Submit</button>
   </form>
   </body>
